@@ -1,6 +1,6 @@
 import React from "react";
 
-const Index = () => {
+const HomeIndex = () => {
   return (
     <div>
     
@@ -203,4 +203,4 @@ const Index = () => {
 );
 };
 
-export default Index;
+export default HomeIndex;

@@ -1,15 +1,17 @@
 import {
+    Link,
     Route,
     BrowserRouter as Router,
+    Switch
 } from "react-router-dom";
 
 import About from './about';
 import Contact from './contact';
 import Index from './index';
-import { Link } from "react-router-dom";
 import React from "react";
+import { RouteWithSubRoutes } from '../my-routes';
 
-const AdminNavBar = () => {
+const AdminNavBar = ({ routes }) => {
   return (
 
     
@@ -25,7 +27,7 @@ const AdminNavBar = () => {
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Home</a>
                 <ul className="collapse list-unstyled" id="homeSubmenu">
                     <li>
-                    <Link className="nav-item nav-link" to="/admin">
+                    <Link className="nav-item nav-link" to="/admin/index">
                         Home
                      </Link>
                     </li>
@@ -74,19 +76,11 @@ const AdminNavBar = () => {
         
     
 
-
-      
-   
-        <Route exact path="/admin">
-        <Index />
-        </Route>
-        <Route path="/admin/about">
-        <About />
-        </Route>
-        <Route path="/admin/contact">
-        <Contact />
-        </Route>
-    
+        <Switch>
+        {routes.map((route, i) => (
+        <RouteWithSubRoutes key={i} {...route} />
+        ))}
+        </Switch>
 
 
 

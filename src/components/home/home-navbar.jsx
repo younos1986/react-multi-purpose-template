@@ -1,17 +1,20 @@
 import {
+    Link,
+    Redirect,
     Route,
     BrowserRouter as Router,
+    Switch
 } from "react-router-dom";
 
 import HomeAbout from "./home-about";
 import HomeContact from "./home-contact";
 import HomeFeatures from "./home-features";
+import HomeIndex from "./home-index";
 import HomeServices from "./home-services";
-import Index from "./index";
-import { Link } from "react-router-dom";
 import React from "react";
+import { RouteWithSubRoutes } from '../my-routes';
 
-const HomeNavBar = () => {
+const HomeNavBar = ({ routes }) => {
   return (
     <div>
     
@@ -31,28 +34,28 @@ const HomeNavBar = () => {
                 <div className="collapse navbar-collapse" id="top-navigation">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item active">
-                        <Link className="nav-item nav-link" to="/home/index">
+                        <Link className="nav-item nav-link" to="/index">
                                 Home
                                 <span className="sr-only">(current)</span>
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-item nav-link" to="/home/about">
+                            <Link className="nav-item nav-link" to="/about">
                                 About
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-item nav-link" to="/home/features">
+                            <Link className="nav-item nav-link" to="/features">
                                  Features
                              </Link>
                         </li>
                         <li className="nav-item">
-                        <Link className="nav-item nav-link" to="/home/services">
+                        <Link className="nav-item nav-link" to="/services">
                         Services
                     </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-item nav-link" to="/home/contact">
+                            <Link className="nav-item nav-link" to="/contact">
                                 Contact
                             </Link>
                         </li>
@@ -70,25 +73,13 @@ const HomeNavBar = () => {
         </nav>
     </header>
    
-
-    <Route path="/home/index">
-    <Index />
-    </Route>
-    <Route path="/home/about">
-    <HomeAbout />
-    </Route>
-    <Route path="/home/features">
-    <HomeFeatures />
-    </Route>
-    <Route path="/home/services">
-    <HomeServices />
-    </Route>
-    
-    <Route path="/home/contact">
-    <HomeContact />
-    </Route>
-
-
+        <Switch>
+        {routes.map((route, i) => (
+        <RouteWithSubRoutes key={i} {...route} />
+        ))}
+        </Switch>
+        <Redirect from="/" to="/index"/>
+        
     <footer id="footer">
         <p className="copyright">Made with
             <i className="fa fa-heart"></i> By
