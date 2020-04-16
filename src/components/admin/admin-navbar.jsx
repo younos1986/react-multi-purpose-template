@@ -9,7 +9,7 @@ import Index from './index';
 import { Link } from "react-router-dom";
 import React from "react";
 
-const NavBar = () => {
+const AdminNavBar = () => {
   return (
 
     
@@ -98,4 +98,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default AdminNavBar;

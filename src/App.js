@@ -6,7 +6,8 @@ import {
   BrowserRouter as Router,
 } from "react-router-dom";
 
-import Navbar from './components/admin/navbar';
+import AdminNavBar from './components/admin/admin-navbar';
+import HomeNavBar from './components/home/home-navbar';
 import React from 'react';
 import logo from './logo.svg';
 
@@ -14,7 +15,15 @@ function App() {
   return (
     <Router>
     <div className="App">
-    <Navbar />
+
+    <Route path="/home">
+        <HomeNavBar />
+    </Route>
+    
+    <Route  path="/admin">
+        <AdminNavBar />
+    </Route>
+    
     </div>
     </Router>
   );
