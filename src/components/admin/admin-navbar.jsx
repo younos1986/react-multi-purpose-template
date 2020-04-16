@@ -1,5 +1,6 @@
 import {
     Link,
+    Redirect,
     Route,
     BrowserRouter as Router,
     Switch
@@ -81,7 +82,7 @@ const AdminNavBar = ({ routes }) => {
         <RouteWithSubRoutes key={i} {...route} />
         ))}
         </Switch>
-
+        <Redirect from="/admin" to="/admin/index"/>
 
 
 

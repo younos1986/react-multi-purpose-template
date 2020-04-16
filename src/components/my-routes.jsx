@@ -16,6 +16,7 @@ import HomeFeatures from './home/home-features';
 import HomeIndex from "./home/home-index";
 import HomeNavBar from './home/home-navbar';
 import HomeServices from './home/home-services';
+import Index from './admin/index';
 import Signin from './signin';
 import Signup from './signup';
 
@@ -33,6 +34,10 @@ const MyRoutes = [
       component: AdminNavBar,
       routes: [
         {
+            path: "/admin/index",
+            component: Index
+          },
+           {
           path: "/admin/about",
           component: About
         },
