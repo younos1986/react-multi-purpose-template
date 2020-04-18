@@ -18,12 +18,13 @@ import HomeNavBar from './components/home/home-navbar';
 import Signin from './components/signin';
 import Signup from './components/signup';
 import logo from './logo.svg';
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
 
     <div className="App">
-
+    <ToastContainer />
     <Switch>
     {MyRoutes.map((route, i) => (
 

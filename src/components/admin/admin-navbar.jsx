@@ -33,6 +33,11 @@ const AdminNavBar = ({ routes }) => {
                      </Link>
                     </li>
                     <li>
+                    <Link className="nav-item nav-link" to="/admin/users">
+                        Users
+                     </Link>
+                    </li>
+                    <li>
                     <Link className="nav-item nav-link" to="/admin/about">
                     About
                  </Link>

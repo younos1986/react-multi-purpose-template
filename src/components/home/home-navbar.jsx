@@ -33,6 +33,12 @@ const HomeNavBar = ({ routes }) => {
                 </button>
                 <div className="collapse navbar-collapse" id="top-navigation">
                     <ul className="navbar-nav ml-auto">
+                        <li className="nav-item">
+                            <Link className="nav-item nav-link" to="/admin">
+                                Admin
+                            </Link>
+                        </li>
+
                         <li className="nav-item active">
                         <Link className="nav-item nav-link" to="/index">
                                 Home

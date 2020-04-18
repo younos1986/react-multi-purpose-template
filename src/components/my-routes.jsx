@@ -10,6 +10,7 @@ import React, { Fragment } from "react";
 import About from './admin/about';
 import AdminNavBar from './admin/admin-navbar';
 import Contact from './admin/contact';
+import Users from './admin/users';
 import HomeAbout from './home/home-about';
 import HomeContact from "./home/home-contact";
 import HomeFeatures from './home/home-features';
@@ -38,6 +39,10 @@ const MyRoutes = [
             component: Index
           },
            {
+          path: "/admin/users",
+          component: Users
+        },
+        {
           path: "/admin/about",
           component: About
         },
